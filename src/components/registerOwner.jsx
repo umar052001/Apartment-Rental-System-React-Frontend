@@ -1,16 +1,17 @@
 import React, { Fragment } from "react";
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
 const RegisterOwner = (props) => {
   const [SignUp, setSignUp] = useState({
     email: "",
     name: "",
     password: "",
-    address: "", 
+    address: "",
     city: "",
     phone: "",
   });
+
   const handleChange = (event) => {
     setSignUp({ ...SignUp, [event.target.id]: event.target.value });
   };
