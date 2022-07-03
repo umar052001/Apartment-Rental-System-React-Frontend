@@ -48,7 +48,10 @@ function App(props) {
 
       <Routes>
         <Route path="/tenantPanel" element={<TenantPanel />} />
-        <Route path="/profileTenant" element={<TenantProfile />} />
+        <Route
+          path="/profileTenant"
+          element={<TenantProfile email={SignIn.email} />}
+        />
         <Route path="/amenities" element={<GetAmenities ownerData />} />
         <Route
           path="/profileOwner"
