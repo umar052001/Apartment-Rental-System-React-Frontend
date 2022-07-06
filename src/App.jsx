@@ -1,15 +1,15 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import RegisterOwner from "./components/registerOwner";
-import RegisterTenant from "./components/registerTenant";
-import SignInOwner from "./components/SignInOwner";
-import SignInTenant from "./components/SignInTenant";
+import LandingPage from "./components/Landing/LandingPage";
+import RegisterOwner from "./components/Register/registerOwner";
+import RegisterTenant from "./components/Register/registerTenant";
+import SignInOwner from "./components/SignIn/SignInOwner";
+import SignInTenant from "./components/SignIn/SignInTenant";
 import Error from "./components/Error";
 import OwnerPanel from "./components/OwnerPanel/ownerPanel";
 import { useState } from "react";
-import Navbar from "./components/navbar";
-import Navbar2 from "./components/Navbar2";
+import Navbar from "./components/Navbar/navbar";
+import Navbar2 from "./components/Navbar/Navbar2";
 import ProfileOwner from "./components/OwnerPanel/ProfileOwner";
 import axios from "axios";
 import GetAmenities from "./components/OwnerPanel/displayAmenities";
@@ -47,11 +47,14 @@ function App(props) {
       )}
 
       <Routes>
-        <Route path="/tenantPanel" element={<TenantPanel />} />
+        {isSignedIn ? 
+        <>
+        
+          <Route path="/tenantPanel" element={<TenantPanel />} />
         <Route
           path="/profileTenant"
           element={<TenantProfile email={SignIn.email} />}
-        />
+          />
         <Route path="/amenities" element={<GetAmenities ownerData />} />
         <Route
           path="/profileOwner"
@@ -60,10 +63,14 @@ function App(props) {
         <Route
           path={`/ownerPanel`}
           element={<OwnerPanel ownerData={ownerData} email={SignIn.email} />}
-        />
+          />
+        </>
+        :
+        null
+        }
         <Route path="*" element={<Error />} />
         <Route
-          exact
+        exact
           path="/"
           element={
             <LandingPage

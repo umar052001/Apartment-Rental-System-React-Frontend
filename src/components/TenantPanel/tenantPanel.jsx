@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "./Cards";
 import { useEffect } from "react";
 import { useState } from "react";
-import { RingLoader } from "react-spinners";
+import { RiseLoader } from "react-spinners";
 
 function TenantPanel() {
   const [loading, setLoading] = useState(false);
@@ -17,12 +17,12 @@ function TenantPanel() {
   return (
     <>
       {loading ? (
-        <div className="items-center justify-center flex w-full h-screen text-center bg-white text-black text-xl">
+        <div className="items-center justify-center flex w-full h-screen text-center bg-gray-800 text-white text-xl">
           <ul>
             <li>
-              <RingLoader size={200} color="#085353" />
+              <RiseLoader size={15.5} color="#0cbbd3" />
             </li>
-            <li>Loading...</li>
+            <li>Please Wait</li>
           </ul>
         </div>
       ) : (

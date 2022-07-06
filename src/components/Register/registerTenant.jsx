@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Navbar from "./navbar";
 import { useState } from "react";
 import axios from "axios";
 
@@ -29,7 +28,6 @@ const RegisterTenant = (props) => {
   };
   return (
     <Fragment>
-
       <section className="relative flex flex-wrap lg:h-screen lg:items-center bg-gray-800">
         <div className="w-full px-4 py-12 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
           <div className="max-w-lg mx-auto text-center">
